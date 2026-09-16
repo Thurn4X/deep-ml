@@ -8,22 +8,10 @@ def transpose_matrix(a: list[list[int|float]]) -> list[list[int|float]]:
     Returns:
         The transposed matrix of shape (n, m)
     """
-    lignes = len(a)
-    colonnes = len(a[0])
-    
-    matrice_transposee = []
-    
-    # On boucle d'abord sur les colonnes (qui deviendront nos lignes)
-    for j in range(colonnes):
-        nouvelle_ligne = []
-        # Ensuite on boucle sur les lignes pour récupérer les éléments de la colonne 'j'
-        for i in range(lignes):
-            nouvelle_ligne.append(a[i][j])
-        
-        # On ajoute cette nouvelle ligne à notre résultat final
-        matrice_transposee.append(nouvelle_ligne)
-        
-    return matrice_transposee
+    import numpy as np
+    matrice_numpy = np.array(a)
+    matrice_transposee = matrice_numpy.T
 
+    return matrice_transposee
 
     pass
